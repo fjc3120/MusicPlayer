@@ -1,16 +1,19 @@
 <template>
   <div>
     <div class="header">
+      <div class="btn">
+        <router-link to="/">首页</router-link>
+      </div>
       <img src="//y.gtimg.cn/mediastyle/yqq/img/logo@2x.png?nowebp=1 2x" alt="" class="qqlogo">
       <span class="header-title">音乐播放器</span>
     </div>
     <div class="footer">
       <ul class="footer-title">
-        <li @click="routerLink('/')" ><span  class="title-left" :class="{classa:flag}">推荐</span></li>
-        <li @click="routerLink('list')"><span  class="title-right" :class="{classb:!flag}">排行榜</span></li>
+        <li @click="routerLink('/')" ><span  class="title-left" :class="{classa:flag=='/'}">推荐</span></li>
+        <li @click="routerLink('list')"><span  class="title-right" :class="{classb:flag=='list'}">排行榜</span></li>
       </ul>
-      <div :class="{classA:flag}"></div>
-      <div :class="{classB:!flag}"></div>
+      <div :class="{classA:flag=='/'}"></div>
+      <div :class="{classB:flag=='list'}"></div>
     </div>
   </div>
 </template>
@@ -21,12 +24,12 @@ export default({
 
   data(){
       return{
-      flag:true
+      flag:'/',
       }
   },
   methods:{
     routerLink(path){
-      this.flag = !this.flag;
+        this.flag = path;
         this.$router.push(path);
     },
 
@@ -74,6 +77,12 @@ export default({
   .qqlogo{
     width: 80px;
     height: 20px;
+    position: absolute;
+    top:50%;
+    left:20px;
+    transform:translate(50%,-50%);
+  }
+  .btn{
     position: absolute;
     top:50%;
     transform:translate(50%,-50%);
