@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="BBox">
   <swipe class="my-swipe">
     <swipe-item class="slide1"><img src="@/assets/img/top1.jpg" alt=""></swipe-item>
     <swipe-item class="slide2"><img src="@/assets/img/top2.jpg" alt=""></swipe-item>
@@ -56,7 +56,9 @@
 
 
 <style scoped>
-
+  .BBox{
+    background: rgba(0,0,0,0.2);
+  }
   .my-swipe {
     height: 140px;
     width: 100%;
@@ -74,14 +76,16 @@
     width:100%;
   }
   .box ul{
-    width:100%;
+    /*width:100%;*/
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    /*margin:10px 10px 10px 10px ;*/
   }
   .box li{
     width:40%;
     margin: 10px 10px 10px 10px;
+    background: white;
   }
 </style>

@@ -1,12 +1,14 @@
 <template>
-  <div>
+  <div class="bodys">
     <div>
-      <ul>
+      <ul class="box-ul">
         <li v-for="(item,index) in photos" :key="index" class="list" @click="routerLink('music')">
-          <div>
+          <div class="box-div">
             <img :src="item.picUrl" alt="">
-            <h3>{{ item.topTitle }}</h3>
-            <p>{{ item.songList[0].songname }}--{{ item.songList[0].singername }}</p>
+            <div class="box-content">
+              <h4>{{ item.topTitle }}</h4>
+              <p>{{ item.songList[0].songname }}--{{ item.songList[0].singername }}</p>
+            </div>
           </div>
         </li>
       </ul>
@@ -47,5 +49,32 @@
 
 
 <style scoped>
-
+.bodys{
+  background: rgba(0,0,0,0.2);
+}
+.box-ul{
+padding: 10px 10px 10px 10px;
+overflow: hidden;
+}
+.box-ul li{
+  height: 100px;
+  margin-bottom: 10px;
+  background: white;
+}
+.box-div{
+    height: 100px;
+  display: flex;
+  }
+.box-div img{
+  height: 100px;
+  flex:1;
+}
+  .box-content{
+    flex:2;
+    height: 100px;
+    padding: 5px 0 5px 5px;
+  }
+  .box-content p{
+    font-size: 14px;
+  }
 </style>

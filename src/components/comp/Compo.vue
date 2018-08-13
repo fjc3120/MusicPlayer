@@ -4,7 +4,7 @@
       <div class="btn">
         <router-link to="/">首页</router-link>
       </div>
-      <img src="//y.gtimg.cn/mediastyle/yqq/img/logo@2x.png?nowebp=1 2x" alt="" class="qqlogo">
+      <img src="http://y.gtimg.cn/mediastyle/yqq/img/logo@2x.png?nowebp=1%202x" alt="" class="qqlogo">
       <span class="header-title">音乐播放器</span>
     </div>
     <div class="footer">
@@ -58,12 +58,14 @@ export default({
     top:50px;
     left: 0;
     width:100%;
+    background: white;
   }
   .header-title{
     text-align: center;
     position: absolute;
     left: 50%;
     transform: translate(-50%,50%);
+    background: #0fff;
   }
   .footer-title{
     display: flex;
@@ -72,15 +74,15 @@ export default({
     flex:1;
     text-align: center;
     line-height: 50px;
-
   }
   .qqlogo{
     width: 80px;
     height: 20px;
     position: absolute;
     top:50%;
-    left:20px;
-    transform:translate(50%,-50%);
+    left:50%;
+    transform:translate(-72%,-50%);
+    overflow: hidden;
   }
   .btn{
     position: absolute;
